@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuSum - Documentation Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DocuSum</h1>
+            <p>Paste technical documentation and get a concise conclusion</p>
+        </header>
+
+        <main>
+            <form method="POST">
+                <textarea 
+                    name="user_input" 
+                    placeholder="Paste your technical documentation here (user manuals, API docs, specifications)..."
+                    required
+                ></textarea>
+                <button type="submit">
+                    <span class="button-text">Analyze Document</span>
+                    <span class="loading-spinner"></span>
+                </button>
+            </form>
+            
+            {% if conclusion %}
+            <div class="result">
+                <h2>Analysis Result:</h2>
+                <div class="conclusion-box">
+                    {{ conclusion }}
+                </div>
+            </div>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>Powered by Gemini AI | Flask</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple loading indicator
+        document.querySelector('form').addEventListener('submit', function() {
+            const button = this.querySelector('button');
+            button.disabled = true;
+            button.querySelector('.button-text').textContent = 'Processing...';
+            button.querySelector('.loading-spinner').style.display = 'inline-block';
+        });
+    </script>
+</body>
+</html>
