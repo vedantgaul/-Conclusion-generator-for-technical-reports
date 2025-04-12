@@ -4,7 +4,7 @@ Here's a comprehensive **README.md** for your Gemini-powered documentation summa
 ```markdown
 # DocuSum - AI-Powered Documentation Summarizer
 
-![Demo Screenshot](https://i.imgur.com/JQ8K3hO.png) *(replace with your actual screenshot)*
+![Demo youtube video](https://youtu.be/pkmWkX3zydc) 
 
 DocuSum is a Flask web application that leverages Google's Gemini AI to analyze technical documentation and generate concise, actionable summaries. Designed for developers, technical writers, and product managers, it helps users quickly extract key insights from complex technical content.
 
